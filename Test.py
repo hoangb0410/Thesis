@@ -15,7 +15,7 @@ import sys
 
 cap = cv2.VideoCapture(0)
 # Dinh nghia class
-class_name = ['00000','5000','10000','20000','50000','200000']
+class_name = ['00000','10000','20000','5000']
 
 def get_model():
     model_vgg16_conv = VGG16(weights='imagenet', include_top=False)
@@ -34,7 +34,7 @@ def get_model():
     x = Dropout(0.5)(x)
     x = Dense(4096, activation='relu', name='fc2')(x)
     x = Dropout(0.5)(x)
-    x = Dense(6, activation='softmax', name='predictions')(x)
+    x = Dense(4, activation='softmax', name='predictions')(x)
 
     # Compile
     my_model = Model(inputs=input, outputs=x)
@@ -44,7 +44,7 @@ def get_model():
 
 # Load weights model da train
 my_model = get_model()
-my_model.load_weights("weights-38-0.99.hdf5")
+my_model.load_weights("weights-33-1.00.hdf5")
 
 while(True):
     # Capture frame-by-frame
@@ -65,8 +65,6 @@ while(True):
     print("This picture is: ", class_name[np.argmax(predict[0])], (predict[0]))
     print(np.max(predict[0],axis=0))
     if (np.max(predict)>=0.8) and (np.argmax(predict[0])!=0):
-
-
         # Show image
         font = cv2.FONT_HERSHEY_SIMPLEX
         org = (50, 50)

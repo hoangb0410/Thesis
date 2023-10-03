@@ -5,37 +5,75 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Cao Viet Hoang">
     <link rel="stylesheet" href="main.css">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" >
     <title>Vending machine</title>
 </head>
 <body>
-    <div class="keypad">
-        <input type="text" id="textbox1" onclick="selectTextbox(1)">
-        <input type="text" id="textbox2" onclick="selectTextbox(2)">
-        <div class="keys">
-          <div class="row">
-            <button class="key" onclick="appendNumber(1)">1</button>
-            <button class="key" onclick="appendNumber(2)">2</button>
-            <button class="key" onclick="appendNumber(3)">3</button>
-          </div>
-          <div class="row">
-            <button class="key" onclick="appendNumber(4)">4</button>
-            <button class="key" onclick="appendNumber(5)">5</button>
-            <button class="key" onclick="appendNumber(6)">6</button>
-          </div>
-          <div class="row">
-            <button class="key" onclick="appendNumber(7)">7</button>
-            <button class="key" onclick="appendNumber(8)">8</button>
-            <button class="key" onclick="appendNumber(9)">9</button>
-          </div>
-          <div class="row">
-            <button class="key" onclick="appendNumber(0)">0</button>
-          </div>
-          <div class="row">
-            <button class="key" onclick="clearDisplay()">Clear</button>
+    <div class="container">
+      <div class="left">
+        <button class="button button1" onclick="alert('Đưa tiền vào camera!')">Input cash</button>
+
+        <div class="keypad">
+          <label for="textbox1">Quantity</label>
+          <input type="text" id="textbox1" onclick="selectTextbox(1)">
+          <label for="textbox2">Product Code</label>
+          <input type="text" id="textbox2" onclick="selectTextbox(2)">
+          <div class="keys">
+            <div class="row">
+              <button class="key" onclick="appendNumber(1)">1</button>
+              <button class="key" onclick="appendNumber(4)">4</button>
+              <button class="key" onclick="appendNumber(7)">7</button>
+            </div>
+            <div class="row">
+              <button class="key" onclick="appendNumber(2)">2</button>
+              <button class="key" onclick="appendNumber(5)">5</button>
+              <button class="key" onclick="appendNumber(8)">8</button>
+            </div>
+            <div class="row">
+              <button class="key" onclick="appendNumber(3)">3</button>
+              <button class="key" onclick="appendNumber(6)">6</button>
+              <button class="key" onclick="appendNumber(9)">9</button>
+            </div>
+            <div><button class="key" onclick="OK">OK</button></div>
+            <div class="row">
+              <button class="key" onclick="appendNumber(0)">0</button>
+            </div>
+            <div><button class="key" onclick="clearDisplay()">Clear</button></div>
           </div>
         </div>
+
+        <button class="button button2" onclick="alert('Cancel!')">Cancel</button>
       </div>
 
-      <script src="main.js"></script>
+      <div class="right">
+         <div class="picture" id="p1"><img src="./Image/coca_cola.jpg" alt="Coca Cola"></div>
+         <div class="picture" id ="p2"><img src="./Image/pepsi.jpg" alt="Pepsi"></div>
+         <div class="picture" id ="p3"><img src="./Image/fanta.png" alt="Fanta"></div>
+         <div class="product_name" id="n1">
+            <h1 >Coca Cola</h1>
+            <ul>
+              <li>Product code: 001</li>
+              <li>Quantity: 20</li>
+            </ul>
+        </div>
+        <div class="product_name" id="n2">
+          <h1 >Pepsi</h1>
+          <ul>
+            <li>Product code: 002</li>
+            <li>Quantity: 20</li>
+          </ul>
+        </div>
+        <div class="product_name" id="n3">
+          <h1 >Fanta</h1>
+          <ul>
+            <li>Product code: 003</li>
+            <li>Quantity: 20</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    
+  <!-- javascript -->
+    <script src="main.js"></script>
 </body>
 </html>

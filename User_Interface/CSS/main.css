@@ -45,3 +45,8 @@
             border-radius: 6px;
             border: 2px solid black;
         }
+
+label {
+    font-size: 2em;
+    text-align: center;
+}

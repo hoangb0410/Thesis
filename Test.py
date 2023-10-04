@@ -72,8 +72,7 @@ while(True):
         color = (0, 255, 0)
         thickness = 2
 
-        cv2.putText(image_org, class_name[np.argmax(predict)], org, font,
-                    fontScale, color, thickness, cv2.LINE_AA)
+        cv2.putText(image_org, class_name[np.argmax(predict)], org, font, fontScale, color, thickness, cv2.LINE_AA)
 
     cv2.imshow("Picture", image_org)
 

@@ -11,19 +11,29 @@
   
   .key {
     padding: 10px;
-    font-size: 18px;
+    font-size: 20px;
     width: 70px;
     height: 70px;
     border-radius: 5px;
   }
   
+  .key:hover{
+    background-color: rgb(0, 253, 169);
+  }
+
   input[type="text"] {
     width: 196px;
     padding: 10px;
     margin-bottom: 10px;
     font-size: 18px;
     border-radius: 5px;
+    background-color: rgb(156, 255, 222);
   }
+
+  input[type="text"]:hover{
+    background-color: rgb(0, 253, 169);
+  }
+
   label {
     font-family: Arial, Helvetica, sans-serif;
     font-size: large;
@@ -32,7 +42,6 @@
   .button {
     border: none;
     color: black;
-    padding: 15px 32px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
@@ -46,6 +55,7 @@
   display: grid;
   grid-template-columns: 560px ;
   grid-row: 2;
+  grid-gap: 5px;
 }
 
 .left {
@@ -54,36 +64,61 @@
   grid-template-columns: 150px 260px 150px;
   grid-row: 3;
   background-color: rgb(177, 208, 255);
+  border-radius: 10px;
 }
 
 .button1{
   grid-column: 1;
   grid-row: 3;
-  width: 150px;
+  width: 145px;
+  height: 100px;
+  border-radius: 10px;
+  font-weight: bolder;
+  font-size: 25px;
+  border-style: solid;
+  border-color: #d47a12;
 }
+
+.button1:hover {
+  background-color: rgb(34, 187, 34);
+}
+
 .keypad{
   grid-column: 2;
-  grid-row: auto;
+  grid-row: 2;
 }
+
 .button2{
   grid-column: 3;
   grid-row: 3;
-  width: 150px;
+  width: 145px;
+  height: 100px;
+  border-radius: 10px;
+  font-weight: bolder;
+  font-size: 25px;
+  border-style: solid;
+  border-color: #d47a12;
+}
+
+.button2:hover {
+  background-color: red;
 }
 
 .right{
   grid-column: 2;
   display: grid;
-  background-color: rgb(235, 235, 65);
+  background-color: rgb(248, 224, 158);
   grid-template-columns: repeat(3,1fr);
-  grid-template-rows: 320px 150px;
+  grid-template-rows: 280px 150px;
   grid-row: 3;
   grid-gap: 10px;
+  border-radius: 10px;
 }
 
 img{
-  width: 320px;
-  height: 320px;
+  width: 250px;
+  height: 250px;
+  border-radius: 10px;
 }
 
 #p1{
@@ -104,10 +139,19 @@ html{
 }
 
 li{
-  font-size: 20pt;
+  font-size: 18pt;
   color: blue;
 }
 
 h1{
+  margin-top: auto;
   text-align: center;
+}
+
+.picture{
+  display: block;
+  margin-top: 20px;
+  margin-left: 90px;
+  margin-right: auto;
+  width: 50%;
 }

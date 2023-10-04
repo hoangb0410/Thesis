@@ -127,11 +127,6 @@ vgghist=vggmodel.fit_generator(aug.flow(X_train, y_train, batch_size=64),
 vggmodel.save("vggmodel.h5")
 
 
-
-
-
-
-
 def plot_model_history(model_history, acc='accuracy', val_acc='val_accuracy'):
     fig, axs = plt.subplots(1, 2, figsize=(15, 5))
     axs[0].plot(range(1, len(model_history.history[acc]) + 1), model_history.history[acc])

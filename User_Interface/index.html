@@ -10,57 +10,19 @@
     <title>Vending Machine</title>
 </head>
 <body>
-    <h1>Hello</h1>
-    <div>
-        <button class="button button1" onclick="alert('Hello world!')">Đưa tiền</button>
-        <button class="button button2" onclick="alert('Hello world!')">Cancel</button>
-    </div>
-    <hr>
-
       <div class="container">
-          <h1>Minimal Numeric Keypad Plugin Example</h1>
           <p class="lead"></p>
           <form>
               <input type="text" class="keypad" disabled="disabled" />
           </form>
           <div id="keypad"></div>
+          <button class="button button1" onclick="alert('Hello world!')">Đưa tiền</button>
+          <button class="button button2" onclick="alert('Hello world!')">Cancel</button>
       </div>
-    
-      <script src="https://code.jquery.com/jquery-3.6.1.slim.min.js"></script>
-      <script type="text/javascript" src="./JS/jquery.keypad.js"></script>
-      <script type="text/javascript">
-          $(document).ready(function() {
-              $('#keypad').keypad();
-              $('form').submit(function(e) {
-                  e.preventDefault();
-                  console.log($('input.keypad').val());
-              });
-          });
-      </script>
-      <script async src="https://www.googletagmanager.com/gtag/js?id=G-1VDDWMRSTH"></script>
-      <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-1VDDWMRSTH');
-      </script>
-      <script>
-        try {
-          fetch(new Request("https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js", { method: 'HEAD', mode: 'no-cors' })).then(function(response) {
-            return true;
-          }).catch(function(e) {
-            var carbonScript = document.createElement("script");
-            carbonScript.src = "//cdn.carbonads.com/carbon.js?serve=CK7DKKQU&placement=wwwjqueryscriptnet";
-            carbonScript.id = "_carbonads_js";
-            document.getElementById("carbon-block").appendChild(carbonScript);
-          });
-        } catch (error) {
-          console.log(error);
-        }
-      </script>
-
-
     <!-- External JS -->
     <script src="./JS/main.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.1.slim.min.js"></script>
+    <script type="text/javascript" src="./JS/jquery.keypad.js"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-1VDDWMRSTH"></script>
 </body>
 </html>

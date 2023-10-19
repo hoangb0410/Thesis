@@ -14,6 +14,7 @@ image_logo_1=ptk.PhotoImage(image_logo)
 label_logo=Label(Heading,image=image_logo_1)
 label_logo.grid(row=0,column=0)
 image_logo_large=ptk.PhotoImage(p.Image.open("E:\VSCODE\Thesis\Temp\Images\Logo_Large.jpg"))
+
 grocery1_image=ptk.PhotoImage(p.Image.open("E:\VSCODE\Thesis\Temp\Images\Grocery_1.jpg"))
 grocery2_image=ptk.PhotoImage(p.Image.open("E:\VSCODE\Thesis\Temp\Images\Grocery_2.jpeg"))
 grocery3_image=ptk.PhotoImage(p.Image.open("E:\VSCODE\Thesis\Temp\Images\Grocery_3.jpeg"))
@@ -114,8 +115,10 @@ sportsgym_list=[]
 furniture_list=[]
 #Appliances variables
 appliances_list=[]
+
 name=Label(Heading,text="The Emporium",font="arial 20 bold italic",bg="light pink",fg="blue").grid(row=0,column=1)
 tagline=Label(Heading,text="Shopping made easier!",font="magneto 16 italic",fg="gold",bg="black").grid(row=0,column=2,padx=280)
+
 Products_frame=LabelFrame(root,bd=2,relief="groove",text="Products",font="arial 16 bold",fg="dark blue")
 Products_frame.place(x=310,y=60,width=1040,height=620)
 label_logo_large=Label(Products_frame,image=image_logo_large,bd=2).place(x=250,y=100)
@@ -1065,6 +1068,7 @@ def Bill():
         Coupon_apply3.place(x=540,y=370)
     else:
         messagebox.showinfo("Bill Generation Confirmation","You can continue shopping now.")
+
 bill_gen_button=Button(Heading,bd=4,text="Proceed to Checkout",font="times 17 bold",bg="skyblue",fg="white",activebackground="purple",command=Bill)
 bill_gen_button.grid(row=0,column=3)
 root.mainloop()

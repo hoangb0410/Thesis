@@ -15,7 +15,7 @@ import sys
 
 cap = cv2.VideoCapture(0)
 # Dinh nghia class
-class_name = ['00000','10000','20000','5000']
+class_name = ['00000','10000','100000','20000','5000','50000']
 
 def get_model():
     model_vgg16_conv = VGG16(weights='imagenet', include_top=False)
@@ -23,7 +23,6 @@ def get_model():
     # Dong bang cac layer
     for layer in model_vgg16_conv.layers:
         layer.trainable = False
-
     # Tao model
     input = Input(shape=(128, 128, 3), name='image_input')
     output_vgg16_conv = model_vgg16_conv(input)
@@ -34,7 +33,7 @@ def get_model():
     x = Dropout(0.5)(x)
     x = Dense(4096, activation='relu', name='fc2')(x)
     x = Dropout(0.5)(x)
-    x = Dense(4, activation='softmax', name='predictions')(x)
+    x = Dense(6, activation='softmax', name='predictions')(x)
 
     # Compile
     my_model = Model(inputs=input, outputs=x)
@@ -44,11 +43,10 @@ def get_model():
 
 # Load weights model da train
 my_model = get_model()
-my_model.load_weights("weights-33-1.00.hdf5")
+my_model.load_weights("weights-31-0.98.hdf5")
 
 while(True):
     # Capture frame-by-frame
-
     ret, image_org = cap.read()
     if not ret:
         continue
@@ -71,11 +69,12 @@ while(True):
         fontScale = 1.5
         color = (0, 255, 0)
         thickness = 2
-
         cv2.putText(image_org, class_name[np.argmax(predict)], org, font,
                     fontScale, color, thickness, cv2.LINE_AA)
 
     cv2.imshow("Picture", image_org)
+    # Final Value
+    print(class_name[np.argmax(predict)])
 
     if cv2.waitKey(1) & 0xFF == ord('q'):
         break

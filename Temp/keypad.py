@@ -6,7 +6,7 @@ def enumerate_row_column(iterable, num_cols):
         row = idx // num_cols
         col = idx % num_cols
         yield row,col,item
-
+        
 class NumpadEntry(Entry):
     def __init__(self,parent=None,**kw):
         Entry.__init__(self,parent,**kw)
@@ -30,7 +30,6 @@ class numPad(simpledialog.Dialog):
         self.top.protocol("WM_DELETE_WINDOW",self.ok)
         self.createWidgets()
         self.master = master
-        
     def createWidgets(self):
         btn_list = ['7',  '8',  '9', '4',  '5',  '6', '1',  '2',  '3', '0',  'Close',  'Del']
         # create and position all buttons with a for-loop
@@ -43,8 +42,7 @@ class numPad(simpledialog.Dialog):
             cur = Button(self.top, text=label, width=10, height=5, command=cmd)
             # position the button
             cur.grid(row=r, column=c)                                              
-            btn.append(cur)
-            
+            btn.append(cur)        
     def click(self,label):
         print(label)
         if label == 'Del':

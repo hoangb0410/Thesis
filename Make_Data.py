@@ -4,7 +4,7 @@ import time
 import os
 
 # Label: 00000 là ko cầm tiền, còn lại là các mệnh giá
-label = "20000(n)"
+label = "temp"
 
 cap = cv2.VideoCapture(0)
 

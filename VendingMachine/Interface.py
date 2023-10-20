@@ -115,6 +115,7 @@ remain_grocery7=Label(lf_grocery7,text="20 pack",font="arial 15",bg='azure2',pad
 remain_grocery8=Label(lf_grocery8,text="20 pack",font="arial 15",bg='azure2',padx=60).grid(row=4,column=0)
 
 #Recognize
+entry_text2 = StringVar()
 def Recognize():
     import cv2
     import numpy as np
@@ -179,6 +180,7 @@ def Recognize():
     # Final Value
     global money_value
     money_value = class_name[np.argmax(predict)]
+    entry_text2.set(money_value)
     # When everything done, release the capture
     cap.release()
     cv2.destroyAllWindows()
@@ -194,11 +196,13 @@ textbox1.bind("<Button-1>", lambda event: activate_textbox(textbox1))
 # textbox2.place(x=35,y=58)
 # textbox2.bind("<Button-1>", lambda event: activate_textbox(textbox2))
 
-entry_text2 = StringVar()
+btn = Button(Button_frame, text="Input\nCash", bg="Orange", fg="Black",height=3,width=7, font=('arial 18'),command=Recognize)
+btn.place(x=0,y=482)
+
 textbox2 = Entry(Button_frame,width=15,bg='aquamarine1',font=('Arial 25'),textvariable=entry_text2,justify=CENTER)
 textbox2.pack()
 textbox2.place(x=35,y=58)
-entry_text2.set('hello')
+# entry_text2.set('Hello')
 textbox2.bind("<Button-1>", lambda event: activate_textbox(textbox2))
 
 def update_textbox(textbox, key):
@@ -255,11 +259,10 @@ def activate_textbox(textbox):
     active_textbox = textbox
 
 # Button
-def run1():
-    Popen([sys.executable,'E:\VSCODE\Thesis\Test.py'])
+# def run1():
+#     Popen([sys.executable,'E:\VSCODE\Thesis\Test.py'])
 
-btn = Button(Button_frame, text="Input\nCash", bg="Orange", fg="Black",height=3,width=7, font=('arial 18'),command=Recognize)
-btn.place(x=0,y=482)
+
 
 def run2():
     entry_text1.set('')

@@ -242,6 +242,7 @@ def handle_keypress(key):
     elif key == 'Clear':
         clear_textbox()
     elif key == 'OK':
+        Xuly()
         perform_action()
 
 def clear_textbox():
@@ -278,7 +279,8 @@ def Xuly():
         p_money='10000'
     else:
         p_money='5000'
-    if money<p_money:
+
+    if int(money)<int(p_money):
         op=messagebox.showinfo('Notice','Not enough money')
     elif money==p_money:
         op = messagebox.showinfo('Notice', 'Successful')

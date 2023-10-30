@@ -22,7 +22,7 @@ name=Label(Heading,text="Vending Machine",font="arial 20 bold",bg="light pink",f
 # tagline=Label(Heading,text="Shopping made easier!",font="arial 16",fg="gold",bg="black").grid(row=0,column=2,padx=280)
 
 # Button Frame
-Button_frame=LabelFrame(root,bd=2,relief="groove",text="Button",font="arial 16 bold",fg="dark blue",bg='seashell1')
+Button_frame=LabelFrame(root,bd=2,relief="groove",text="Operation",font="arial 16 bold",fg="dark blue",bg='seashell1')
 Button_frame.place(x=2,y=60,width=350,height=620)
 
 # Product Frame
@@ -203,10 +203,15 @@ def Recognize():
     cv2.destroyAllWindows()
 
 # Create the textboxes
+LabelText=StringVar()
+LabelText.set("Product Code ")
+labelDir=Label(Button_frame, textvariable=LabelText, font=("Arial",15),bg='lightpink')
+labelDir.pack()
+labelDir.place(x=3,y=10)
 entry_text1 = StringVar()
-textbox1 = Entry(Button_frame,width=15,bg='aquamarine1',font=('Arial 25'),justify=CENTER,textvariable=entry_text1)
+textbox1 = Entry(Button_frame,width=13,bg='aquamarine1',font=('Arial 22'),justify=CENTER,textvariable=entry_text1)
 textbox1.pack()
-textbox1.place(x=35,y=10)
+textbox1.place(x=131,y=7)
 textbox1.bind("<Button-1>", lambda event: activate_textbox(textbox1))
 # textbox2 = Entry(Button_frame,width=15,bg='aquamarine1',font=('Arial 25'))
 # textbox2.pack()
@@ -216,9 +221,14 @@ textbox1.bind("<Button-1>", lambda event: activate_textbox(textbox1))
 btn = Button(Button_frame, text="Input\nCash", bg="Orange", fg="Black",height=3,width=7, font=('arial 18'),command=Recognize)
 btn.place(x=0,y=482)
 
-textbox2 = Entry(Button_frame,width=15,bg='aquamarine1',font=('Arial 25'),textvariable=entry_text2,justify=CENTER)
+LabelText=StringVar()
+LabelText.set("Money Input")
+labelDir=Label(Button_frame, textvariable=LabelText, font=("Arial",17),bg='lightpink')
+labelDir.pack()
+labelDir.place(x=3,y=58)
+textbox2 = Entry(Button_frame,width=13,bg='aquamarine1',font=('Arial 22'),textvariable=entry_text2,justify=CENTER)
 textbox2.pack()
-textbox2.place(x=35,y=58)
+textbox2.place(x=131,y=56)
 textbox2.bind("<Button-1>", lambda event: activate_textbox(textbox2))
 
 def update_textbox(textbox, key):
@@ -455,7 +465,7 @@ def Process():
                     remain_product7.config(text='0'+str(quantity_product7)+' pack')
                 else:
                     remain_product7.config(text=str(quantity_product7)+' pack') 
-    else:
+    elif code=='008':
         p_money='5000'
         global quantity_product8
         if quantity_product8<=0:
@@ -478,6 +488,9 @@ def Process():
                     remain_product8.config(text='0'+str(quantity_product8)+' pack')
                 else:
                     remain_product8.config(text=str(quantity_product8)+' pack')
+    else:
+        Label(notice,text='Invalid product code!', font=('Arial',50),fg='red',bg='mintcream').pack(padx=30,pady=30)
+
 
 
     # if int(money)<int(p_money):

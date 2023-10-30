@@ -21,6 +21,15 @@ else:
 
 notice=Tk()
 notice.title("Notice")
+LabelText=StringVar()
+LabelText.set("Product Code")
+labelDir=Label(notice, textvariable=LabelText, font=("Arial",22),bg='seashell2')
+labelDir.pack(side="left")
+entry_text1 = StringVar()
+textbox1 = Entry(notice,width=15,bg='aquamarine1',font=('Arial 22'),justify=CENTER,textvariable=entry_text1)
+textbox1.pack(side="left")
+
+
 notice.configure(background='mintcream')
 if int(money)<int(p_money):
     Label(notice,text='Not enough money!', font=('Arial',50),fg='red',bg='mintcream').pack(padx=30,pady=30)

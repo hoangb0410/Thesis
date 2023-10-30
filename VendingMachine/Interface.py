@@ -19,7 +19,7 @@ image_logo_1=ptk.PhotoImage(image_logo)
 label_logo=Label(Heading,image=image_logo_1)
 label_logo.grid(row=0,column=0)
 name=Label(Heading,text="Vending Machine",font="arial 20 bold",bg="light pink",fg="blue").grid(row=0,column=1)
-tagline=Label(Heading,text="Shopping made easier!",font="arial 16",fg="gold",bg="black").grid(row=0,column=2,padx=280)
+# tagline=Label(Heading,text="Shopping made easier!",font="arial 16",fg="gold",bg="black").grid(row=0,column=2,padx=280)
 
 # Button Frame
 Button_frame=LabelFrame(root,bd=2,relief="groove",text="Button",font="arial 16 bold",fg="dark blue",bg='seashell1')
@@ -29,90 +29,107 @@ Button_frame.place(x=2,y=60,width=350,height=620)
 Products_frame=LabelFrame(root,bd=2,relief="groove",text="Products",font="arial 16 bold",fg="dark blue",bg='seashell1')
 Products_frame.place(x=355,y=60,width=843,height=620)
 
-# Grocery
-grocery1_image=ptk.PhotoImage(p.Image.open("C:\Thesis\VendingMachine\Images\coca_cola.jpg"))
-grocery2_image=ptk.PhotoImage(p.Image.open("C:\Thesis\VendingMachine\Images\pepsi.jpg"))
-grocery3_image=ptk.PhotoImage(p.Image.open("C:\Thesis\VendingMachine\Images\lfanta.png"))
-grocery4_image=ptk.PhotoImage(p.Image.open("C:\Thesis\VendingMachine\Images\mirinda_orange.png"))
-grocery5_image=ptk.PhotoImage(p.Image.open("C:\Thesis\VendingMachine\Images\Snack_1.png"))
-grocery6_image=ptk.PhotoImage(p.Image.open("C:\Thesis\VendingMachine\Images\Snack_2.jpg"))
-grocery7_image=ptk.PhotoImage(p.Image.open("C:\Thesis\VendingMachine\Images\Snack_3.jpg"))
-grocery8_image=ptk.PhotoImage(p.Image.open("C:\Thesis\VendingMachine\Images\Snack_4.jpg"))
+# product
+product1_image=ptk.PhotoImage(p.Image.open("C:\Thesis\VendingMachine\Images\coca_cola.jpg"))
+product2_image=ptk.PhotoImage(p.Image.open("C:\Thesis\VendingMachine\Images\pepsi.jpg"))
+product3_image=ptk.PhotoImage(p.Image.open("C:\Thesis\VendingMachine\Images\lfanta.png"))
+product4_image=ptk.PhotoImage(p.Image.open("C:\Thesis\VendingMachine\Images\mirinda_orange.png"))
+product5_image=ptk.PhotoImage(p.Image.open("C:\Thesis\VendingMachine\Images\Snack_1.png"))
+product6_image=ptk.PhotoImage(p.Image.open("C:\Thesis\VendingMachine\Images\Snack_2.jpg"))
+product7_image=ptk.PhotoImage(p.Image.open("C:\Thesis\VendingMachine\Images\Snack_3.jpg"))
+product8_image=ptk.PhotoImage(p.Image.open("C:\Thesis\VendingMachine\Images\Snack_4.jpg"))
 
 # Function Hide all Frame
 def HideAllFrames():
     for widget in Products_frame.winfo_children():
         widget.destroy()
 
-# Grocery //cach nhau 210
+# product //cach nhau 210
 # row 1
-lf_grocery1=LabelFrame(Products_frame,bd=2,relief="groove",bg='rosybrown1')
-lf_grocery1.place(x=5,y=10,width=200,height=286)
-lf_grocery2=LabelFrame(Products_frame,bd=2,relief="groove",bg='rosybrown1')
-lf_grocery2.place(x=215,y=10,width=200,height=286)
-lf_grocery3=LabelFrame(Products_frame,bd=2,relief="groove",bg='rosybrown1')
-lf_grocery3.place(x=425,y=10,width=200,height=286)
-lf_grocery4=LabelFrame(Products_frame,bd=2,relief="groove",bg='rosybrown1')
-lf_grocery4.place(x=635,y=10,width=200,height=286)
+lf_product1=LabelFrame(Products_frame,bd=2,relief="groove",bg='rosybrown1')
+lf_product1.place(x=5,y=10,width=200,height=286)
+lf_product2=LabelFrame(Products_frame,bd=2,relief="groove",bg='rosybrown1')
+lf_product2.place(x=215,y=10,width=200,height=286)
+lf_product3=LabelFrame(Products_frame,bd=2,relief="groove",bg='rosybrown1')
+lf_product3.place(x=425,y=10,width=200,height=286)
+lf_product4=LabelFrame(Products_frame,bd=2,relief="groove",bg='rosybrown1')
+lf_product4.place(x=635,y=10,width=200,height=286)
 # row 2
-lf_grocery6=LabelFrame(Products_frame,bd=2,relief="groove",bg='rosybrown1')
-lf_grocery6.place(x=5,y=300,width=200,height=286)
-lf_grocery7=LabelFrame(Products_frame,bd=2,relief="groove",bg='rosybrown1')
-lf_grocery7.place(x=215,y=300,width=200,height=286)
-lf_grocery8=LabelFrame(Products_frame,bd=2,relief="groove",bg='rosybrown1')
-lf_grocery8.place(x=425,y=300,width=200,height=286)
-lf_grocery5=LabelFrame(Products_frame,bd=2,relief="groove",bg='rosybrown1')
-lf_grocery5.place(x=635,y=300,width=200,height=286)
+lf_product5=LabelFrame(Products_frame,bd=2,relief="groove",bg='rosybrown1')
+lf_product5.place(x=5,y=300,width=200,height=286)
+lf_product6=LabelFrame(Products_frame,bd=2,relief="groove",bg='rosybrown1')
+lf_product6.place(x=215,y=300,width=200,height=286)
+lf_product7=LabelFrame(Products_frame,bd=2,relief="groove",bg='rosybrown1')
+lf_product7.place(x=425,y=300,width=200,height=286)
+lf_product8=LabelFrame(Products_frame,bd=2,relief="groove",bg='rosybrown1')
+lf_product8.place(x=635,y=300,width=200,height=286)
 
 # Product code
-code_grocery1=Label(lf_grocery1,text="001",font="arial 15",bg='aqua',fg='red',justify="center",padx=79).grid(row=0,column=0)
-code_grocery2=Label(lf_grocery2,text="002",font="arial 15",bg='aqua',fg='red',justify="center",padx=79).grid(row=0,column=0)
-code_grocery3=Label(lf_grocery3,text="003",font="arial 15",bg='aqua',fg='red',justify="center",padx=79).grid(row=0,column=0)
-code_grocery4=Label(lf_grocery4,text="004",font="arial 15",bg='aqua',fg='red',justify="center",padx=79).grid(row=0,column=0)
-code_grocery5=Label(lf_grocery5,text="005",font="arial 15",bg='aqua',fg='red',justify="center",padx=79).grid(row=0,column=0)
-code_grocery6=Label(lf_grocery6,text="006",font="arial 15",bg='aqua',fg='red',justify="center",padx=79).grid(row=0,column=0)
-code_grocery7=Label(lf_grocery7,text="007",font="arial 15",bg='aqua',fg='red',justify="center",padx=79).grid(row=0,column=0)
-code_grocery8=Label(lf_grocery8,text="008",font="arial 15",bg='aqua',fg='red',justify="center",padx=79).grid(row=0,column=0)
+code_product1=Label(lf_product1,text="001",font="arial 15",bg='aqua',fg='red',justify="center",padx=79).grid(row=0,column=0)
+code_product2=Label(lf_product2,text="002",font="arial 15",bg='aqua',fg='red',justify="center",padx=79).grid(row=0,column=0)
+code_product3=Label(lf_product3,text="003",font="arial 15",bg='aqua',fg='red',justify="center",padx=79).grid(row=0,column=0)
+code_product4=Label(lf_product4,text="004",font="arial 15",bg='aqua',fg='red',justify="center",padx=79).grid(row=0,column=0)
+code_product5=Label(lf_product5,text="005",font="arial 15",bg='aqua',fg='red',justify="center",padx=79).grid(row=0,column=0)
+code_product6=Label(lf_product6,text="006",font="arial 15",bg='aqua',fg='red',justify="center",padx=79).grid(row=0,column=0)
+code_product7=Label(lf_product7,text="007",font="arial 15",bg='aqua',fg='red',justify="center",padx=79).grid(row=0,column=0)
+code_product8=Label(lf_product8,text="008",font="arial 15",bg='aqua',fg='red',justify="center",padx=79).grid(row=0,column=0)
 
 # Product image
-label_grocery_1=Label(lf_grocery1,image=grocery1_image,bd=2).grid(row=1,column=0)
-label_grocery_2=Label(lf_grocery2,image=grocery2_image,bd=2).grid(row=1,column=0)
-label_grocery_3=Label(lf_grocery3,image=grocery3_image,bd=2).grid(row=1,column=0)
-label_grocery_4=Label(lf_grocery4,image=grocery4_image,bd=2).grid(row=1,column=0)
-label_grocery_5=Label(lf_grocery5,image=grocery5_image,bd=2).grid(row=1,column=0)
-label_grocery_6=Label(lf_grocery6,image=grocery6_image,bd=2).grid(row=1,column=0)
-label_grocery_7=Label(lf_grocery7,image=grocery7_image,bd=2).grid(row=1,column=0)
-label_grocery_8=Label(lf_grocery8,image=grocery8_image,bd=2).grid(row=1,column=0)
+label_product_1=Label(lf_product1,image=product1_image,bd=2).grid(row=1,column=0)
+label_product_2=Label(lf_product2,image=product2_image,bd=2).grid(row=1,column=0)
+label_product_3=Label(lf_product3,image=product3_image,bd=2).grid(row=1,column=0)
+label_product_4=Label(lf_product4,image=product4_image,bd=2).grid(row=1,column=0)
+label_product_5=Label(lf_product5,image=product5_image,bd=2).grid(row=1,column=0)
+label_product_6=Label(lf_product6,image=product6_image,bd=2).grid(row=1,column=0)
+label_product_7=Label(lf_product7,image=product7_image,bd=2).grid(row=1,column=0)
+label_product_8=Label(lf_product8,image=product8_image,bd=2).grid(row=1,column=0)
 
 # Product name
-# name_grocery1=Label(lf_grocery1,text="Coca Cola",font="arial 12",bg='yellow').grid(row=3,column=0,padx=20)
-# name_grocery2=Label(lf_grocery2,text="Pepsi",font="arial 12",justify="center",bg='yellow').grid(row=3,column=0,padx=15)
-# name_grocery3=Label(lf_grocery3,text="Fanta",font="arial 12",justify="center",bg='yellow').grid(row=3,column=0)
-# name_grocery4=Label(lf_grocery4,text="Mirinda",font="arial 12",justify="center",bg='yellow').grid(row=3,column=0,padx=9)
-# name_grocery5=Label(lf_grocery5,text="Snack Ostar",font="arial 12",justify="center",bg='yellow').grid(row=3,column=0,padx=9)
-# name_grocery6=Label(lf_grocery6,text="Snack Pumpkin",font="arial 12",justify="center",bg='yellow').grid(row=3,column=0,padx=15)
-# name_grocery7=Label(lf_grocery7,text="Snack Indochips",font="arial 12",justify="center",bg='yellow').grid(row=3,column=0)
-# name_grocery8=Label(lf_grocery8,text="Snack Maize",font="arial 12",justify="center",bg='yellow').grid(row=3,column=0,padx=20)
+# name_product1=Label(lf_product1,text="Coca Cola",font="arial 12",bg='yellow').grid(row=3,column=0,padx=20)
+# name_product2=Label(lf_product2,text="Pepsi",font="arial 12",justify="center",bg='yellow').grid(row=3,column=0,padx=15)
+# name_product3=Label(lf_product3,text="Fanta",font="arial 12",justify="center",bg='yellow').grid(row=3,column=0)
+# name_product4=Label(lf_product4,text="Mirinda",font="arial 12",justify="center",bg='yellow').grid(row=3,column=0,padx=9)
+# name_product5=Label(lf_product5,text="Snack Ostar",font="arial 12",justify="center",bg='yellow').grid(row=3,column=0,padx=9)
+# name_product6=Label(lf_product6,text="Snack Pumpkin",font="arial 12",justify="center",bg='yellow').grid(row=3,column=0,padx=15)
+# name_product7=Label(lf_product7,text="Snack Indochips",font="arial 12",justify="center",bg='yellow').grid(row=3,column=0)
+# name_product8=Label(lf_product8,text="Snack Maize",font="arial 12",justify="center",bg='yellow').grid(row=3,column=0,padx=20)
 
 # Product price
-price_grocery1=Label(lf_grocery1,text="10000Đ",font="arial 15",bg='yellow',padx=60).grid(row=3,column=0)
-price_grocery2=Label(lf_grocery2,text="10000Đ",font="arial 15",bg='yellow',padx=60).grid(row=3,column=0)
-price_grocery3=Label(lf_grocery3,text="10000Đ",font="arial 15",bg='yellow',padx=60).grid(row=3,column=0)
-price_grocery4=Label(lf_grocery4,text="10000Đ",font="arial 15",bg='yellow',padx=60).grid(row=3,column=0)
-price_grocery5=Label(lf_grocery5,text="5000Đ",font="arial 15",bg='yellow',padx=66).grid(row=3,column=0)
-price_grocery6=Label(lf_grocery6,text="5000Đ",font="arial 15",bg='yellow',padx=66).grid(row=3,column=0)
-price_grocery7=Label(lf_grocery7,text="5000Đ",font="arial 15",bg='yellow',padx=66).grid(row=3,column=0)
-price_grocery8=Label(lf_grocery8,text="5000Đ",font="arial 15",bg='yellow',padx=66).grid(row=3,column=0)
+price_product1=Label(lf_product1,text="10000Đ",font="arial 15",bg='yellow',padx=60).grid(row=3,column=0)
+price_product2=Label(lf_product2,text="10000Đ",font="arial 15",bg='yellow',padx=60).grid(row=3,column=0)
+price_product3=Label(lf_product3,text="10000Đ",font="arial 15",bg='yellow',padx=60).grid(row=3,column=0)
+price_product4=Label(lf_product4,text="10000Đ",font="arial 15",bg='yellow',padx=60).grid(row=3,column=0)
+price_product5=Label(lf_product5,text="5000Đ",font="arial 15",bg='yellow',padx=66).grid(row=3,column=0)
+price_product6=Label(lf_product6,text="5000Đ",font="arial 15",bg='yellow',padx=66).grid(row=3,column=0)
+price_product7=Label(lf_product7,text="5000Đ",font="arial 15",bg='yellow',padx=66).grid(row=3,column=0)
+price_product8=Label(lf_product8,text="5000Đ",font="arial 15",bg='yellow',padx=66).grid(row=3,column=0)
 
 # Product remain
-remain_grocery1=Label(lf_grocery1,text="20 can",font="arial 15",bg='azure2',padx=65).grid(row=4,column=0)
-remain_grocery2=Label(lf_grocery2,text="20 can",font="arial 15",bg='azure2',padx=65).grid(row=4,column=0)
-remain_grocery3=Label(lf_grocery3,text="20 can",font="arial 15",bg='azure2',padx=65).grid(row=4,column=0)
-remain_grocery4=Label(lf_grocery4,text="20 can",font="arial 15",bg='azure2',padx=65).grid(row=4,column=0)
-remain_grocery5=Label(lf_grocery5,text="20 pack",font="arial 15",bg='azure2',padx=60).grid(row=4,column=0)
-remain_grocery6=Label(lf_grocery6,text="20 pack",font="arial 15",bg='azure2',padx=60).grid(row=4,column=0)
-remain_grocery7=Label(lf_grocery7,text="20 pack",font="arial 15",bg='azure2',padx=60).grid(row=4,column=0)
-remain_grocery8=Label(lf_grocery8,text="20 pack",font="arial 15",bg='azure2',padx=60).grid(row=4,column=0)
+quantity_product1 = 20
+quantity_product2 = 10
+quantity_product3 = 0
+quantity_product4 = 7
+quantity_product5 = 20
+quantity_product6 = 1
+quantity_product7 = 10
+quantity_product8 = 15
+
+remain_product1=Label(lf_product1,text=str(quantity_product1)+" can",font="arial 15",bg='azure2',padx=65)
+remain_product1.grid(row=4,column=0)
+remain_product2=Label(lf_product2,text=str(quantity_product2)+" can",font="arial 15",bg='azure2',padx=65)
+remain_product2.grid(row=4,column=0)
+remain_product3=Label(lf_product3,text="0"+str(quantity_product3)+" can",font="arial 15",bg='azure2',padx=65)
+remain_product3.grid(row=4,column=0)
+remain_product4=Label(lf_product4,text="0"+str(quantity_product4)+" can",font="arial 15",bg='azure2',padx=65)
+remain_product4.grid(row=4,column=0)
+remain_product5=Label(lf_product5,text=str(quantity_product5)+" pack",font="arial 15",bg='azure2',padx=60)
+remain_product5.grid(row=4,column=0)
+remain_product6=Label(lf_product6,text="0"+str(quantity_product6)+" pack",font="arial 15",bg='azure2',padx=60)
+remain_product6.grid(row=4,column=0)
+remain_product7=Label(lf_product7,text=str(quantity_product7)+" pack",font="arial 15",bg='azure2',padx=60)
+remain_product7.grid(row=4,column=0)
+remain_product8=Label(lf_product8,text=str(quantity_product8)+" pack",font="arial 15",bg='azure2',padx=60)
+remain_product8.grid(row=4,column=0)
 
 #Recognize
 entry_text2 = StringVar()
@@ -202,7 +219,6 @@ btn.place(x=0,y=482)
 textbox2 = Entry(Button_frame,width=15,bg='aquamarine1',font=('Arial 25'),textvariable=entry_text2,justify=CENTER)
 textbox2.pack()
 textbox2.place(x=35,y=58)
-# entry_text2.set('Hello')
 textbox2.bind("<Button-1>", lambda event: activate_textbox(textbox2))
 
 def update_textbox(textbox, key):
@@ -242,7 +258,7 @@ def handle_keypress(key):
     elif key == 'Clear':
         clear_textbox()
     elif key == 'OK':
-        Xuly()
+        Process()
         perform_action()
 
 def clear_textbox():
@@ -265,26 +281,210 @@ def activate_textbox(textbox):
 
 
 
-def run2():
+def run():
     entry_text1.set('')
     entry_text2.set('')
 
-btn = Button(Button_frame, text="Cancel", bg="Orange", fg="Black",height=3,width=7,font=('arial 18'),command=run2)
+btn = Button(Button_frame, text="Cancel", bg="Orange", fg="Black",height=3,width=7,font=('arial 18'),command=run)
 btn.place(x=237,y=482)
 
-def Xuly():
+def Process():
+    notice=Tk()
+    notice.title("Notice")
+    notice.configure(background='mintcream')
     code = textbox1.get()
     money = textbox2.get()
-    if code=='001' or code=='002' or code =='003' or code =='004' :
+    global quantity_product1
+    if code=='001':
         p_money='10000'
+        if quantity_product1<=0:
+            Label(notice,text='Sold out!', font=('Arial',50),fg='red',bg='mintcream').pack(padx=30,pady=30)
+        else:
+            if int(money)<int(p_money):
+                Label(notice,text='Not enough money!', font=('Arial',50),fg='red',bg='mintcream').pack(padx=30,pady=30)
+            elif money==p_money:
+                Label(notice,text='Successful!', font=('Arial',50),fg='green3',bg='mintcream').pack(padx=30,pady=30)
+                quantity_product1=quantity_product1-1
+                if quantity_product1<10:
+                    remain_product1.config(text='0'+str(quantity_product1)+' can')
+                else:
+                    remain_product1.config(text=str(quantity_product1)+' can')
+            else:
+                du=int(money)-int(p_money)
+                Label(notice,text='Refund: '+str(du)+'Đ', font=('Arial',50),fg='#FF6103',bg='mintcream').pack(padx=30,pady=30)
+                quantity_product1=quantity_product1-1
+                if quantity_product1<10:
+                    remain_product1.config(text='0'+str(quantity_product1)+' can')
+                else:
+                    remain_product1.config(text=str(quantity_product1)+' can')
+    elif code=='002':
+        p_money='10000'
+        global quantity_product2
+        if quantity_product2<=0:
+            Label(notice,text='Sold out!', font=('Arial',50),fg='red',bg='mintcream').pack(padx=30,pady=30)
+        else:
+            if int(money)<int(p_money):
+                Label(notice,text='Not enough money!', font=('Arial',50),fg='red',bg='mintcream').pack(padx=30,pady=30)
+            elif money==p_money:
+                Label(notice,text='Successful!', font=('Arial',50),fg='green3',bg='mintcream').pack(padx=30,pady=30)
+                quantity_product2=quantity_product2-1
+                if quantity_product2<10:
+                    remain_product2.config(text='0'+str(quantity_product2)+' can')
+                else:
+                    remain_product2.config(text=str(quantity_product2)+' can')
+            else:
+                du=int(money)-int(p_money)
+                Label(notice,text='Refund: '+str(du)+'Đ', font=('Arial',50),fg='#FF6103',bg='mintcream').pack(padx=30,pady=30)
+                quantity_product2=quantity_product2-1
+                if quantity_product2<10:
+                    remain_product2.config(text='0'+str(quantity_product2)+' can')
+                else:
+                    remain_product2.config(text=str(quantity_product2)+' can')
+    elif code=='003':
+        p_money='10000'
+        global quantity_product3
+        if quantity_product3<=0:
+            Label(notice,text='Sold out!', font=('Arial',50),fg='red',bg='mintcream').pack(padx=30,pady=30)
+        else:
+            if int(money)<int(p_money):
+                Label(notice,text='Not enough money!', font=('Arial',50),fg='red',bg='mintcream').pack(padx=30,pady=30)
+            elif money==p_money:
+                Label(notice,text='Successful!', font=('Arial',50),fg='green3',bg='mintcream').pack(padx=30,pady=30)
+                quantity_product3=quantity_product3-1
+                if quantity_product3<10:
+                    remain_product3.config(text='0'+str(quantity_product3)+' can')
+                else:
+                    remain_product3.config(text=str(quantity_product3)+' can')
+            else:
+                du=int(money)-int(p_money)
+                Label(notice,text='Refund: '+str(du)+'Đ', font=('Arial',50),fg='#FF6103',bg='mintcream').pack(padx=30,pady=30)
+                quantity_product3=quantity_product3-1
+                if quantity_product3<10:
+                    remain_product3.config(text='0'+str(quantity_product3)+' can')
+                else:
+                    remain_product3.config(text=str(quantity_product3)+' can')
+    elif code=='004':
+        p_money='10000'
+        global quantity_product4
+        if quantity_product4<=0:
+            Label(notice,text='Sold out!', font=('Arial',50),fg='red',bg='mintcream').pack(padx=30,pady=30)
+        else:
+            if int(money)<int(p_money):
+                Label(notice,text='Not enough money!', font=('Arial',50),fg='red',bg='mintcream').pack(padx=30,pady=30)
+            elif money==p_money:
+                Label(notice,text='Successful!', font=('Arial',50),fg='green3',bg='mintcream').pack(padx=30,pady=30)
+                quantity_product4=quantity_product4-1
+                if quantity_product4<10:
+                    remain_product4.config(text='0'+str(quantity_product4)+' can')
+                else:
+                    remain_product4.config(text=str(quantity_product4)+' can')
+            else:
+                du=int(money)-int(p_money)
+                Label(notice,text='Refund: '+str(du)+'Đ', font=('Arial',50),fg='#FF6103',bg='mintcream').pack(padx=30,pady=30)
+                quantity_product4=quantity_product4-1
+                if quantity_product4<10:
+                    remain_product4.config(text='0'+str(quantity_product4)+' can')
+                else:
+                    remain_product4.config(text=str(quantity_product4)+' can')
+    elif code=='005':
+        p_money='5000'
+        global quantity_product5
+        if quantity_product5<=0:
+            Label(notice,text='Sold out!', font=('Arial',50),fg='red',bg='mintcream').pack(padx=30,pady=30)
+        else:
+            if int(money)<int(p_money):
+                Label(notice,text='Not enough money!', font=('Arial',50),fg='red',bg='mintcream').pack(padx=30,pady=30)
+            elif money==p_money:
+                Label(notice,text='Successful!', font=('Arial',50),fg='green3',bg='mintcream').pack(padx=30,pady=30)
+                quantity_product5=quantity_product5-1
+                if quantity_product5<10:
+                    remain_product5.config(text='0'+str(quantity_product5)+' pack')
+                else:
+                    remain_product5.config(text=str(quantity_product5)+' pack')
+            else:
+                du=int(money)-int(p_money)
+                Label(notice,text='Refund: '+str(du)+'Đ', font=('Arial',50),fg='#FF6103',bg='mintcream').pack(padx=30,pady=30)
+                quantity_product5=quantity_product5-1
+                if quantity_product5<10:
+                    remain_product5.config(text='0'+str(quantity_product5)+' pack')
+                else:
+                    remain_product5.config(text=str(quantity_product5)+' pack')
+    elif code=='006':
+        p_money='5000'
+        global quantity_product6
+        if quantity_product6<=0:
+            Label(notice,text='Sold out!', font=('Arial',50),fg='red',bg='mintcream').pack(padx=30,pady=30)
+        else:
+            if int(money)<int(p_money):
+                Label(notice,text='Not enough money!', font=('Arial',50),fg='red',bg='mintcream').pack(padx=30,pady=30)
+            elif money==p_money:
+                Label(notice,text='Successful!', font=('Arial',50),fg='green3',bg='mintcream').pack(padx=30,pady=30)
+                quantity_product6=quantity_product6-1
+                if quantity_product6<10:
+                    remain_product6.config(text='0'+str(quantity_product6)+' pack')
+                else:
+                    remain_product6.config(text=str(quantity_product6)+' pack')
+            else:
+                du=int(money)-int(p_money)
+                Label(notice,text='Refund: '+str(du)+'Đ', font=('Arial',50),fg='#FF6103',bg='mintcream').pack(padx=30,pady=30)
+                quantity_product6=quantity_product6-1
+                if quantity_product6<10:
+                    remain_product6.config(text='0'+str(quantity_product6)+' pack')
+                else:
+                    remain_product6.config(text=str(quantity_product6)+' pack')
+    elif code=='007':
+        p_money='5000'
+        global quantity_product7
+        if quantity_product7<=0:
+            Label(notice,text='Sold out!', font=('Arial',50),fg='red',bg='mintcream').pack(padx=30,pady=30)
+        else:
+            if int(money)<int(p_money):
+                Label(notice,text='Not enough money!', font=('Arial',50),fg='red',bg='mintcream').pack(padx=30,pady=30)
+            elif money==p_money:
+                Label(notice,text='Successful!', font=('Arial',50),fg='green3',bg='mintcream').pack(padx=30,pady=30)
+                quantity_product7=quantity_product7-1
+                if quantity_product7<10:
+                    remain_product7.config(text='0'+str(quantity_product7)+' pack')
+                else:
+                    remain_product7.config(text=str(quantity_product7)+' pack')
+            else:
+                du=int(money)-int(p_money)
+                Label(notice,text='Refund: '+str(du)+'Đ', font=('Arial',50),fg='#FF6103',bg='mintcream').pack(padx=30,pady=30)
+                quantity_product7=quantity_product7-1
+                if quantity_product7<10:
+                    remain_product7.config(text='0'+str(quantity_product7)+' pack')
+                else:
+                    remain_product7.config(text=str(quantity_product7)+' pack') 
     else:
         p_money='5000'
+        global quantity_product8
+        if quantity_product8<=0:
+            Label(notice,text='Sold out!', font=('Arial',50),fg='red',bg='mintcream').pack(padx=30,pady=30)
+        else:
+            if int(money)<int(p_money):
+                Label(notice,text='Not enough money!', font=('Arial',50),fg='red',bg='mintcream').pack(padx=30,pady=30)
+            elif money==p_money:
+                Label(notice,text='Successful!', font=('Arial',50),fg='green3',bg='mintcream').pack(padx=30,pady=30)
+                quantity_product8=quantity_product8-1
+                if quantity_product8<10:
+                    remain_product8.config(text='0'+str(quantity_product8)+' pack')
+                else:
+                    remain_product8.config(text=str(quantity_product8)+' pack')
+            else:
+                du=int(money)-int(p_money)
+                Label(notice,text='Refund: '+str(du)+'Đ', font=('Arial',50),fg='#FF6103',bg='mintcream').pack(padx=30,pady=30)
+                quantity_product8=quantity_product8-1
+                if quantity_product8<10:
+                    remain_product8.config(text='0'+str(quantity_product8)+' pack')
+                else:
+                    remain_product8.config(text=str(quantity_product8)+' pack')
 
-    if int(money)<int(p_money):
-        op=messagebox.showinfo('Notice','Not enough money')
-    elif money==p_money:
-        op = messagebox.showinfo('Notice', 'Successful')
-    else:
-        du=int(money)-int(p_money)
-        op = messagebox.showinfo('Notice', 'Tiền thừa: '+str(du))
+
+    # if int(money)<int(p_money):
+    #     Label(notice,text='Not enough money!', font=('Arial',50),fg='red',bg='mintcream').pack(padx=30,pady=30)
+    # elif money==p_money:
+    #     Label(notice,text='Successful!', font=('Arial',50),fg='green3',bg='mintcream').pack(padx=30,pady=30)
+    # else:
+    #     du=int(money)-int(p_money)
+    #     Label(notice,text='Refund: '+str(du)+'Đ', font=('Arial',50),fg='#FF6103',bg='mintcream').pack(padx=30,pady=30)
 root.mainloop()

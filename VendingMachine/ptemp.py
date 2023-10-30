@@ -1,11 +1,33 @@
-from tkinter import *
-master = Tk()
+from tkinter import * #If you get an error here, try Tkinter not tkinter
 
-master.configure(background='SteelBlue1')
-master.columnconfigure(0, weight=1) # make the column 1 expand when the window is resized
-nb_of_columns = 2 # to be replaced by the relevant number
-titlelabel = Label(master, text="my Title", fg="blue4", bg ="gray80")
-titlelabel.grid(row=0, column=0, sticky='ew', columnspan=nb_of_columns) # sticky='ew' expands the label horizontally
+# def SuccessfulDisplay():
+#     Dialog1 = Toplevel(height=500, width=500) #Here
+#     Label(Dialog1,text='Successful!', font=('Arial',50),fg='green3').pack(padx=30,pady=30)
 
-master.geometry('200x200')
-master.mainloop()
+# def FailedDisplay():
+#     Dialog2 = Toplevel(height=1000, width=1000) #Here
+#     Label(Dialog2,text='Not enough money!', font=('Arial',50),fg='red').pack(padx=30,pady=30)
+
+# def RefundChangeDisplay():
+#     Dialog3 = Toplevel(height=1000, width=1000) #Here
+#     Label(Dialog3,text='Not enough money!', font=('Arial',50),fg='red').pack(padx=30,pady=30)
+
+code = '001'
+money = '15000'
+if code=='001' or code=='002' or code =='003' or code =='004' :
+    p_money='10000'
+else:
+    p_money='5000'
+
+notice=Tk()
+notice.title("Notice")
+notice.configure(background='mintcream')
+if int(money)<int(p_money):
+    Label(notice,text='Not enough money!', font=('Arial',50),fg='red',bg='mintcream').pack(padx=30,pady=30)
+elif money==p_money:
+    Label(notice,text='Successful!', font=('Arial',50),fg='green3',bg='mintcream').pack(padx=30,pady=30)
+else:
+    du=int(money)-int(p_money)
+    Label(notice,text='Tiền thừa: '+str(du)+'Đ', font=('Arial',50),fg='#FF6103',bg='mintcream').pack(padx=30,pady=30)
+
+notice.mainloop()

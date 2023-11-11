@@ -6,7 +6,7 @@ import os
 # Label: 00000 là ko cầm tiền, còn lại là các mệnh giá
 label = "temp"
 
-cap = cv2.VideoCapture(0)
+cap = cv2.VideoCapture(0,cv2.CAP_DSHOW)
 
 # Biến đếm, để chỉ lưu dữ liệu sau khoảng 60 frame, tránh lúc đầu chưa kịp cầm tiền lên
 i=1

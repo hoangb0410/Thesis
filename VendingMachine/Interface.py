@@ -153,7 +153,7 @@ def Recognize():
     from keras.applications.vgg16 import VGG16
     from keras.layers import Input, Flatten, Dense, Dropout
     from keras.models import Model
-    cap = cv2.VideoCapture(0)
+    cap = cv2.VideoCapture(0,cv2.CAP_DSHOW)
     # Dinh nghia class
     class_name = ['00000', '10000', '100000', '20000', '5000', '50000']
     def get_model():

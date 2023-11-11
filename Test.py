@@ -13,7 +13,7 @@ import random
 from keras.models import load_model
 import sys
 
-cap = cv2.VideoCapture(0)
+cap = cv2.VideoCapture(0,cv2.CAP_DSHOW)
 # Dinh nghia class
 class_name = ['00000','10000','100000','20000','5000','50000']
 

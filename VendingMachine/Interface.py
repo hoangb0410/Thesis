@@ -213,7 +213,7 @@ def Recognize():
     money_value = class_name[np.argmax(predict)]
     code1 = textbox1.get()
     money1 = textbox2.get()
-    if money1=="":
+    if money1=="" or code1=="":
         entry_text2.set(money_value)
     else:
         if code1=='001':

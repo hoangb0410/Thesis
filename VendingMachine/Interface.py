@@ -177,7 +177,7 @@ def Recognize():
         return my_model
     # Load weights model da train
     my_model = get_model()
-    my_model.load_weights("E:\VSCODE\Thesis\weights-31-0.98.hdf5")
+    my_model.load_weights("E:\VSCODE\Thesis\weights-47-0.99.hdf5")
     # stuff to run always here such as class/def
     while (True):
         # Capture frame-by-frame

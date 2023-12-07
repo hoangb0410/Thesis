@@ -2,8 +2,6 @@ from tkinter import *
 import PIL as p
 import PIL.ImageTk as ptk
 import os
-# from subprocess import Popen
-# import sys
 
 # Create the GUI window
 root=Tk()
@@ -17,7 +15,6 @@ image_logo_1=ptk.PhotoImage(image_logo)
 label_logo=Label(Heading,image=image_logo_1)
 label_logo.grid(row=0,column=0)
 name=Label(Heading,text="Vending Machine",font="arial 20 bold",bg="light pink",fg="blue").grid(row=0,column=1)
-# tagline=Label(Heading,text="Shopping made easier!",font="arial 16",fg="gold",bg="black").grid(row=0,column=2,padx=280)
 
 # Button Frame
 Button_frame=LabelFrame(root,bd=2,relief="groove",text="Operation",font="arial 16 bold",fg="dark blue",bg='seashell1')
@@ -82,16 +79,6 @@ label_product_6=Label(lf_product6,image=product6_image,bd=2).grid(row=1,column=0
 label_product_7=Label(lf_product7,image=product7_image,bd=2).grid(row=1,column=0)
 label_product_8=Label(lf_product8,image=product8_image,bd=2).grid(row=1,column=0)
 
-# Product name
-# name_product1=Label(lf_product1,text="Coca Cola",font="arial 12",bg='yellow').grid(row=3,column=0,padx=20)
-# name_product2=Label(lf_product2,text="Pepsi",font="arial 12",justify="center",bg='yellow').grid(row=3,column=0,padx=15)
-# name_product3=Label(lf_product3,text="Fanta",font="arial 12",justify="center",bg='yellow').grid(row=3,column=0)
-# name_product4=Label(lf_product4,text="Mirinda",font="arial 12",justify="center",bg='yellow').grid(row=3,column=0,padx=9)
-# name_product5=Label(lf_product5,text="Snack Ostar",font="arial 12",justify="center",bg='yellow').grid(row=3,column=0,padx=9)
-# name_product6=Label(lf_product6,text="Snack Pumpkin",font="arial 12",justify="center",bg='yellow').grid(row=3,column=0,padx=15)
-# name_product7=Label(lf_product7,text="Snack Indochips",font="arial 12",justify="center",bg='yellow').grid(row=3,column=0)
-# name_product8=Label(lf_product8,text="Snack Maize",font="arial 12",justify="center",bg='yellow').grid(row=3,column=0,padx=20)
-
 # Product price
 price1 = 8000
 price2 = 10000
@@ -109,14 +96,6 @@ price_product5=Label(lf_product5,text=str(price5)+'Đ',font="arial 15",bg='yello
 price_product6=Label(lf_product6,text=str(price6)+'Đ',font="arial 15",bg='yellow',padx=66).grid(row=3,column=0)
 price_product7=Label(lf_product7,text=str(price7)+'Đ',font="arial 15",bg='yellow',padx=60).grid(row=3,column=0)
 price_product8=Label(lf_product8,text=str(price8)+'Đ',font="arial 15",bg='yellow',padx=60).grid(row=3,column=0)
-# price_product1=Label(lf_product1,text=" 8000Đ ",font="arial 15",bg='yellow',padx=60).grid(row=3,column=0)
-# price_product2=Label(lf_product2,text="10000Đ",font="arial 15",bg='yellow',padx=60).grid(row=3,column=0)
-# price_product3=Label(lf_product3,text="15000Đ",font="arial 15",bg='yellow',padx=60).grid(row=3,column=0)
-# price_product4=Label(lf_product4,text="20000Đ",font="arial 15",bg='yellow',padx=60).grid(row=3,column=0)
-# price_product5=Label(lf_product5,text="5000Đ",font="arial 15",bg='yellow',padx=66).grid(row=3,column=0)
-# price_product6=Label(lf_product6,text="7000Đ",font="arial 15",bg='yellow',padx=66).grid(row=3,column=0)
-# price_product7=Label(lf_product7,text="10000Đ",font="arial 15",bg='yellow',padx=60).grid(row=3,column=0)
-# price_product8=Label(lf_product8,text="15000Đ",font="arial 15",bg='yellow',padx=60).grid(row=3,column=0)
 
 # Product remain
 quantity_product1 = 20
@@ -271,10 +250,6 @@ textbox1 = Entry(Button_frame,width=13,bg='aquamarine1',font=('Arial 22'),justif
 textbox1.pack()
 textbox1.place(x=131,y=7)
 textbox1.bind("<Button-1>", lambda event: activate_textbox(textbox1))
-# textbox2 = Entry(Button_frame,width=15,bg='aquamarine1',font=('Arial 25'))
-# textbox2.pack()
-# textbox2.place(x=35,y=58)
-# textbox2.bind("<Button-1>", lambda event: activate_textbox(textbox2))
 
 btn = Button(Button_frame, text="Input\nCash", bg="Orange", fg="Black",height=3,width=7, font=('arial 18'),command=Recognize)
 btn.place(x=0,y=482)
@@ -343,15 +318,11 @@ def activate_textbox(textbox):
     global active_textbox
     active_textbox = textbox
 
-# Button
-# def run1():
-#     Popen([sys.executable,'E:\VSCODE\Thesis\Test.py'])
-
-def run():
+def restart():
     entry_text1.set('')
     entry_text2.set('')
 
-btn = Button(Button_frame, text="Cancel", bg="Orange", fg="Black",height=3,width=7,font=('arial 18'),command=run)
+btn = Button(Button_frame, text="Cancel", bg="Orange", fg="Black",height=3,width=7,font=('arial 18'),command=restart)
 btn.place(x=237,y=482)
 
 def Process():
@@ -360,183 +331,212 @@ def Process():
     notice.configure(background='mintcream')
     code = textbox1.get()
     money = textbox2.get()
-    global quantity_product1
-    if code=='001':
-        if quantity_product1<=0:
-            Label(notice,text='Sold out!', font=('Arial',50),fg='red',bg='mintcream').pack(padx=30,pady=30)
-        else:
-            if int(money)<price1:
-                Label(notice,text='Not enough money!', font=('Arial',50),fg='red',bg='mintcream').pack(padx=30,pady=30)
-            elif money==str(price1):
-                Label(notice,text='Successful!', font=('Arial',50),fg='green3',bg='mintcream').pack(padx=30,pady=30)
-                quantity_product1=quantity_product1-1
-                if quantity_product1<10:
-                    remain_product1.config(text='0'+str(quantity_product1)+' can')
-                else:
-                    remain_product1.config(text=str(quantity_product1)+' can')
-            else:
-                du=int(money)-price1
-                Label(notice,text='Refund: '+str(du)+'Đ', font=('Arial',50),fg='#FF6103',bg='mintcream').pack(padx=30,pady=30)
-                quantity_product1=quantity_product1-1
-                if quantity_product1<10:
-                    remain_product1.config(text='0'+str(quantity_product1)+' can')
-                else:
-                    remain_product1.config(text=str(quantity_product1)+' can')
-    elif code=='002':
-        global quantity_product2
-        if quantity_product2<=0:
-            Label(notice,text='Sold out!', font=('Arial',50),fg='red',bg='mintcream').pack(padx=30,pady=30)
-        else:
-            if int(money)<price2:
-                Label(notice,text='Not enough money!', font=('Arial',50),fg='red',bg='mintcream').pack(padx=30,pady=30)
-            elif money==str(price2):
-                Label(notice,text='Successful!', font=('Arial',50),fg='green3',bg='mintcream').pack(padx=30,pady=30)
-                quantity_product2=quantity_product2-1
-                if quantity_product2<10:
-                    remain_product2.config(text='0'+str(quantity_product2)+' can')
-                else:
-                    remain_product2.config(text=str(quantity_product2)+' can')
-            else:
-                du=int(money)-price2
-                Label(notice,text='Refund: '+str(du)+'Đ', font=('Arial',50),fg='#FF6103',bg='mintcream').pack(padx=30,pady=30)
-                quantity_product2=quantity_product2-1
-                if quantity_product2<10:
-                    remain_product2.config(text='0'+str(quantity_product2)+' can')
-                else:
-                    remain_product2.config(text=str(quantity_product2)+' can')
-    elif code=='003':
-        global quantity_product3
-        if quantity_product3<=0:
-            Label(notice,text='Sold out!', font=('Arial',50),fg='red',bg='mintcream').pack(padx=30,pady=30)
-        else:
-            if int(money)<price3:
-                Label(notice,text='Not enough money!', font=('Arial',50),fg='red',bg='mintcream').pack(padx=30,pady=30)
-            elif money==str(price3):
-                Label(notice,text='Successful!', font=('Arial',50),fg='green3',bg='mintcream').pack(padx=30,pady=30)
-                quantity_product3=quantity_product3-1
-                if quantity_product3<10:
-                    remain_product3.config(text='0'+str(quantity_product3)+' can')
-                else:
-                    remain_product3.config(text=str(quantity_product3)+' can')
-            else:
-                du=int(money)-price3
-                Label(notice,text='Refund: '+str(du)+'Đ', font=('Arial',50),fg='#FF6103',bg='mintcream').pack(padx=30,pady=30)
-                quantity_product3=quantity_product3-1
-                if quantity_product3<10:
-                    remain_product3.config(text='0'+str(quantity_product3)+' can')
-                else:
-                    remain_product3.config(text=str(quantity_product3)+' can')
-    elif code=='004':
-        global quantity_product4
-        if quantity_product4<=0:
-            Label(notice,text='Sold out!', font=('Arial',50),fg='red',bg='mintcream').pack(padx=30,pady=30)
-        else:
-            if int(money)<price4:
-                Label(notice,text='Not enough money!', font=('Arial',50),fg='red',bg='mintcream').pack(padx=30,pady=30)
-            elif money==str(price4):
-                Label(notice,text='Successful!', font=('Arial',50),fg='green3',bg='mintcream').pack(padx=30,pady=30)
-                quantity_product4=quantity_product4-1
-                if quantity_product4<10:
-                    remain_product4.config(text='0'+str(quantity_product4)+' can')
-                else:
-                    remain_product4.config(text=str(quantity_product4)+' can')
-            else:
-                du=int(money)-price4
-                Label(notice,text='Refund: '+str(du)+'Đ', font=('Arial',50),fg='#FF6103',bg='mintcream').pack(padx=30,pady=30)
-                quantity_product4=quantity_product4-1
-                if quantity_product4<10:
-                    remain_product4.config(text='0'+str(quantity_product4)+' can')
-                else:
-                    remain_product4.config(text=str(quantity_product4)+' can')
-    elif code=='005':
-        global quantity_product5
-        if quantity_product5<=0:
-            Label(notice,text='Sold out!', font=('Arial',50),fg='red',bg='mintcream').pack(padx=30,pady=30)
-        else:
-            if int(money)<price5:
-                Label(notice,text='Not enough money!', font=('Arial',50),fg='red',bg='mintcream').pack(padx=30,pady=30)
-            elif money==str(price5):
-                Label(notice,text='Successful!', font=('Arial',50),fg='green3',bg='mintcream').pack(padx=30,pady=30)
-                quantity_product5=quantity_product5-1
-                if quantity_product5<10:
-                    remain_product5.config(text='0'+str(quantity_product5)+' pack')
-                else:
-                    remain_product5.config(text=str(quantity_product5)+' pack')
-            else:
-                du=int(money)-price5
-                Label(notice,text='Refund: '+str(du)+'Đ', font=('Arial',50),fg='#FF6103',bg='mintcream').pack(padx=30,pady=30)
-                quantity_product5=quantity_product5-1
-                if quantity_product5<10:
-                    remain_product5.config(text='0'+str(quantity_product5)+' pack')
-                else:
-                    remain_product5.config(text=str(quantity_product5)+' pack')
-    elif code=='006':
-        global quantity_product6
-        if quantity_product6<=0:
-            Label(notice,text='Sold out!', font=('Arial',50),fg='red',bg='mintcream').pack(padx=30,pady=30)
-        else:
-            if int(money)<price6:
-                Label(notice,text='Not enough money!', font=('Arial',50),fg='red',bg='mintcream').pack(padx=30,pady=30)
-            elif money==str(price6):
-                Label(notice,text='Successful!', font=('Arial',50),fg='green3',bg='mintcream').pack(padx=30,pady=30)
-                quantity_product6=quantity_product6-1
-                if quantity_product6<10:
-                    remain_product6.config(text='0'+str(quantity_product6)+' pack')
-                else:
-                    remain_product6.config(text=str(quantity_product6)+' pack')
-            else:
-                du=int(money)-price6
-                Label(notice,text='Refund: '+str(du)+'Đ', font=('Arial',50),fg='#FF6103',bg='mintcream').pack(padx=30,pady=30)
-                quantity_product6=quantity_product6-1
-                if quantity_product6<10:
-                    remain_product6.config(text='0'+str(quantity_product6)+' pack')
-                else:
-                    remain_product6.config(text=str(quantity_product6)+' pack')
-    elif code=='007':
-        global quantity_product7
-        if quantity_product7<=0:
-            Label(notice,text='Sold out!', font=('Arial',50),fg='red',bg='mintcream').pack(padx=30,pady=30)
-        else:
-            if int(money)<price7:
-                Label(notice,text='Not enough money!', font=('Arial',50),fg='red',bg='mintcream').pack(padx=30,pady=30)
-            elif money==str(price7):
-                Label(notice,text='Successful!', font=('Arial',50),fg='green3',bg='mintcream').pack(padx=30,pady=30)
-                quantity_product7=quantity_product7-1
-                if quantity_product7<10:
-                    remain_product7.config(text='0'+str(quantity_product7)+' pack')
-                else:
-                    remain_product7.config(text=str(quantity_product7)+' pack')
-            else:
-                du=int(money)-price7
-                Label(notice,text='Refund: '+str(du)+'Đ', font=('Arial',50),fg='#FF6103',bg='mintcream').pack(padx=30,pady=30)
-                quantity_product7=quantity_product7-1
-                if quantity_product7<10:
-                    remain_product7.config(text='0'+str(quantity_product7)+' pack')
-                else:
-                    remain_product7.config(text=str(quantity_product7)+' pack') 
-    elif code=='008':
-        global quantity_product8
-        if quantity_product8<=0:
-            Label(notice,text='Sold out!', font=('Arial',50),fg='red',bg='mintcream').pack(padx=30,pady=30)
-        else:
-            if int(money)<price8:
-                Label(notice,text='Not enough money!', font=('Arial',50),fg='red',bg='mintcream').pack(padx=30,pady=30)
-            elif money==str(price8):
-                Label(notice,text='Successful!', font=('Arial',50),fg='green3',bg='mintcream').pack(padx=30,pady=30)
-                quantity_product8=quantity_product8-1
-                if quantity_product8<10:
-                    remain_product8.config(text='0'+str(quantity_product8)+' pack')
-                else:
-                    remain_product8.config(text=str(quantity_product8)+' pack')
-            else:
-                du=int(money)-price8
-                Label(notice,text='Refund: '+str(du)+'Đ', font=('Arial',50),fg='#FF6103',bg='mintcream').pack(padx=30,pady=30)
-                quantity_product8=quantity_product8-1
-                if quantity_product8<10:
-                    remain_product8.config(text='0'+str(quantity_product8)+' pack')
-                else:
-                    remain_product8.config(text=str(quantity_product8)+' pack')
+    if money=='':
+        Label(notice, text='Please Input Cash!', font=('Arial', 30), fg='red', bg='mintcream').pack(padx=30, pady=30)
+    elif code=='':
+        Label(notice, text='Please Input Product Code!', font=('Arial', 30), fg='red', bg='mintcream').pack(padx=30, pady=30)
     else:
-        Label(notice,text='Invalid product code!', font=('Arial',50),fg='red',bg='mintcream').pack(padx=30,pady=30)
-
+        if code=='001':
+            global quantity_product1
+            if quantity_product1<=0:
+                Label(notice, text='Sold out!\n Please choose another product!', font=('Arial', 30), fg='red', bg='mintcream').pack(padx=30, pady=30)
+                entry_text1.set('')
+            else:
+                if int(money)<price1:
+                    Label(notice,text='Not enough money!\n Please choose another product or Input extra money!', font=('Arial',30),fg='red',bg='mintcream').pack(padx=30,pady=30)
+                elif money==str(price1):
+                    Label(notice,text='Successful!', font=('Arial',50),fg='green3',bg='mintcream').pack(padx=30,pady=30)
+                    restart()
+                    quantity_product1=quantity_product1-1
+                    if quantity_product1<10:
+                        remain_product1.config(text='0'+str(quantity_product1)+' can')
+                    else:
+                        remain_product1.config(text=str(quantity_product1)+' can')
+                else:
+                    du=int(money)-price1
+                    Label(notice,text='Successful! Refund: '+str(du)+'Đ', font=('Arial',50),fg='#FF6103',bg='mintcream').pack(padx=30,pady=30)
+                    restart()
+                    quantity_product1=quantity_product1-1
+                    if quantity_product1<10:
+                        remain_product1.config(text='0'+str(quantity_product1)+' can')
+                    else:
+                        remain_product1.config(text=str(quantity_product1)+' can')
+        elif code=='002':
+            global quantity_product2
+            if quantity_product2<=0:
+                Label(notice, text='Sold out!\n Please choose another product!', font=('Arial', 30), fg='red', bg='mintcream').pack(padx=30, pady=30)
+                entry_text1.set('')
+            else:
+                if int(money)<price2:
+                    Label(notice,text='Not enough money!\n Please choose another product or Input extra money!', font=('Arial',30),fg='red',bg='mintcream').pack(padx=30,pady=30)
+                elif money==str(price2):
+                    Label(notice,text='Successful!', font=('Arial',50),fg='green3',bg='mintcream').pack(padx=30,pady=30)
+                    restart()
+                    quantity_product2=quantity_product2-1
+                    if quantity_product2<10:
+                        remain_product2.config(text='0'+str(quantity_product2)+' can')
+                    else:
+                        remain_product2.config(text=str(quantity_product2)+' can')
+                else:
+                    du=int(money)-price2
+                    Label(notice,text='Successful! Refund: '+str(du)+'Đ', font=('Arial',50),fg='#FF6103',bg='mintcream').pack(padx=30,pady=30)
+                    restart()
+                    quantity_product2=quantity_product2-1
+                    if quantity_product2<10:
+                        remain_product2.config(text='0'+str(quantity_product2)+' can')
+                    else:
+                        remain_product2.config(text=str(quantity_product2)+' can')
+        elif code=='003':
+            global quantity_product3
+            if quantity_product3<=0:
+                Label(notice, text='Sold out!\n Please choose another product!', font=('Arial', 30), fg='red', bg='mintcream').pack(padx=30, pady=30)
+                entry_text1.set('')
+            else:
+                if int(money)<price3:
+                    Label(notice,text='Not enough money!\n Please choose another product or Input extra money!', font=('Arial',30),fg='red',bg='mintcream').pack(padx=30,pady=30)
+                elif money==str(price3):
+                    Label(notice,text='Successful!', font=('Arial',50),fg='green3',bg='mintcream').pack(padx=30,pady=30)
+                    restart()
+                    quantity_product3=quantity_product3-1
+                    if quantity_product3<10:
+                        remain_product3.config(text='0'+str(quantity_product3)+' can')
+                    else:
+                        remain_product3.config(text=str(quantity_product3)+' can')
+                else:
+                    du=int(money)-price3
+                    Label(notice,text='Successful! Refund: '+str(du)+'Đ', font=('Arial',50),fg='#FF6103',bg='mintcream').pack(padx=30,pady=30)
+                    restart()
+                    quantity_product3=quantity_product3-1
+                    if quantity_product3<10:
+                        remain_product3.config(text='0'+str(quantity_product3)+' can')
+                    else:
+                        remain_product3.config(text=str(quantity_product3)+' can')
+        elif code=='004':
+            global quantity_product4
+            if quantity_product4<=0:
+                Label(notice, text='Sold out!\n Please choose another product!', font=('Arial', 30), fg='red', bg='mintcream').pack(padx=30, pady=30)
+                entry_text1.set('')
+            else:
+                if int(money)<price4:
+                    Label(notice,text='Not enough money!\n Please choose another product or Input extra money!', font=('Arial',30),fg='red',bg='mintcream').pack(padx=30,pady=30)
+                elif money==str(price4):
+                    Label(notice,text='Successful!', font=('Arial',50),fg='green3',bg='mintcream').pack(padx=30,pady=30)
+                    restart()
+                    quantity_product4=quantity_product4-1
+                    if quantity_product4<10:
+                        remain_product4.config(text='0'+str(quantity_product4)+' can')
+                    else:
+                        remain_product4.config(text=str(quantity_product4)+' can')
+                else:
+                    du=int(money)-price4
+                    Label(notice,text='Successful! Refund: '+str(du)+'Đ', font=('Arial',50),fg='#FF6103',bg='mintcream').pack(padx=30,pady=30)
+                    restart()
+                    quantity_product4=quantity_product4-1
+                    if quantity_product4<10:
+                        remain_product4.config(text='0'+str(quantity_product4)+' can')
+                    else:
+                        remain_product4.config(text=str(quantity_product4)+' can')
+        elif code=='005':
+            global quantity_product5
+            if quantity_product5<=0:
+                Label(notice, text='Sold out!\n Please choose another product!', font=('Arial', 30), fg='red', bg='mintcream').pack(padx=30, pady=30)
+                entry_text1.set('')
+            else:
+                if int(money)<price5:
+                    Label(notice,text='Not enough money!\n Please choose another product or Input extra money!', font=('Arial',30),fg='red',bg='mintcream').pack(padx=30,pady=30)
+                elif money==str(price5):
+                    Label(notice,text='Successful!', font=('Arial',50),fg='green3',bg='mintcream').pack(padx=30,pady=30)
+                    restart()
+                    quantity_product5=quantity_product5-1
+                    if quantity_product5<10:
+                        remain_product5.config(text='0'+str(quantity_product5)+' pack')
+                    else:
+                        remain_product5.config(text=str(quantity_product5)+' pack')
+                else:
+                    du=int(money)-price5
+                    Label(notice,text='Successful! Refund: '+str(du)+'Đ', font=('Arial',50),fg='#FF6103',bg='mintcream').pack(padx=30,pady=30)
+                    restart()
+                    quantity_product5=quantity_product5-1
+                    if quantity_product5<10:
+                        remain_product5.config(text='0'+str(quantity_product5)+' pack')
+                    else:
+                        remain_product5.config(text=str(quantity_product5)+' pack')
+        elif code=='006':
+            global quantity_product6
+            if quantity_product6<=0:
+                Label(notice, text='Sold out!\n Please choose another product!', font=('Arial', 30), fg='red', bg='mintcream').pack(padx=30, pady=30)
+                entry_text1.set('')
+            else:
+                if int(money)<price6:
+                    Label(notice,text='Not enough money!\n Please choose another product or Input extra money!', font=('Arial',30),fg='red',bg='mintcream').pack(padx=30,pady=30)
+                elif money==str(price6):
+                    Label(notice,text='Successful!', font=('Arial',50),fg='green3',bg='mintcream').pack(padx=30,pady=30)
+                    restart()
+                    quantity_product6=quantity_product6-1
+                    if quantity_product6<10:
+                        remain_product6.config(text='0'+str(quantity_product6)+' pack')
+                    else:
+                        remain_product6.config(text=str(quantity_product6)+' pack')
+                else:
+                    du=int(money)-price6
+                    Label(notice,text='Successful! Refund: '+str(du)+'Đ', font=('Arial',50),fg='#FF6103',bg='mintcream').pack(padx=30,pady=30)
+                    restart()
+                    quantity_product6=quantity_product6-1
+                    if quantity_product6<10:
+                        remain_product6.config(text='0'+str(quantity_product6)+' pack')
+                    else:
+                        remain_product6.config(text=str(quantity_product6)+' pack')
+        elif code=='007':
+            global quantity_product7
+            if quantity_product7<=0:
+                Label(notice, text='Sold out!\n Please choose another product!', font=('Arial', 30), fg='red', bg='mintcream').pack(padx=30, pady=30)
+                entry_text1.set('')
+            else:
+                if int(money)<price7:
+                    Label(notice,text='Not enough money!\n Please choose another product or Input extra money!', font=('Arial',30),fg='red',bg='mintcream').pack(padx=30,pady=30)
+                elif money==str(price7):
+                    Label(notice,text='Successful!', font=('Arial',50),fg='green3',bg='mintcream').pack(padx=30,pady=30)
+                    restart()
+                    quantity_product7=quantity_product7-1
+                    if quantity_product7<10:
+                        remain_product7.config(text='0'+str(quantity_product7)+' pack')
+                    else:
+                        remain_product7.config(text=str(quantity_product7)+' pack')
+                else:
+                    du=int(money)-price7
+                    Label(notice,text='Successful! Refund: '+str(du)+'Đ', font=('Arial',50),fg='#FF6103',bg='mintcream').pack(padx=30,pady=30)
+                    restart()
+                    quantity_product7=quantity_product7-1
+                    if quantity_product7<10:
+                        remain_product7.config(text='0'+str(quantity_product7)+' pack')
+                    else:
+                        remain_product7.config(text=str(quantity_product7)+' pack')
+        elif code=='008':
+            global quantity_product8
+            if quantity_product8<=0:
+                Label(notice, text='Sold out!\n Please choose another product!', font=('Arial', 30), fg='red', bg='mintcream').pack(padx=30, pady=30)
+                entry_text1.set('')
+            else:
+                if int(money)<price8:
+                    Label(notice,text='Not enough money!\n Please choose another product or Input extra money!', font=('Arial',30),fg='red',bg='mintcream').pack(padx=30,pady=30)
+                elif money==str(price8):
+                    Label(notice,text='Successful!', font=('Arial',50),fg='green3',bg='mintcream').pack(padx=30,pady=30)
+                    restart()
+                    quantity_product8=quantity_product8-1
+                    if quantity_product8<10:
+                        remain_product8.config(text='0'+str(quantity_product8)+' pack')
+                    else:
+                        remain_product8.config(text=str(quantity_product8)+' pack')
+                else:
+                    du=int(money)-price8
+                    Label(notice,text='Successful! Refund: '+str(du)+'Đ', font=('Arial',50),fg='#FF6103',bg='mintcream').pack(padx=30,pady=30)
+                    restart()
+                    quantity_product8=quantity_product8-1
+                    if quantity_product8<10:
+                        remain_product8.config(text='0'+str(quantity_product8)+' pack')
+                    else:
+                        remain_product8.config(text=str(quantity_product8)+' pack')
+        else:
+            Label(notice,text='Invalid product code!\nEnter another one!', font=('Arial',30),fg='red',bg='mintcream').pack(padx=30,pady=30)
+            entry_text1.set('')
 root.mainloop()

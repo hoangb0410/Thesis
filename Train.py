@@ -3,7 +3,6 @@ from os import listdir
 import cv2
 import numpy as np
 import pickle
-from sklearn.preprocessing import OneHotEncoder
 from sklearn.model_selection import train_test_split
 from keras.applications.vgg16 import VGG16
 from keras.layers import Input, Flatten, Dense, Dropout

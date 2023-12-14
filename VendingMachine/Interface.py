@@ -354,7 +354,7 @@ def Process():
                         remain_product1.config(text=str(quantity_product1)+' can')
                 else:
                     du=int(money)-price1
-                    Label(notice,text='Successful! Refund: '+str(du)+'Đ', font=('Arial',50),fg='#FF6103',bg='mintcream').pack(padx=30,pady=30)
+                    Label(notice,text='Successful!\n Refund: '+str(du)+'Đ', font=('Arial',50),fg='#FF6103',bg='mintcream').pack(padx=30,pady=30)
                     restart()
                     quantity_product1=quantity_product1-1
                     if quantity_product1<10:
@@ -379,7 +379,7 @@ def Process():
                         remain_product2.config(text=str(quantity_product2)+' can')
                 else:
                     du=int(money)-price2
-                    Label(notice,text='Successful! Refund: '+str(du)+'Đ', font=('Arial',50),fg='#FF6103',bg='mintcream').pack(padx=30,pady=30)
+                    Label(notice,text='Successful!\n Refund: '+str(du)+'Đ', font=('Arial',50),fg='#FF6103',bg='mintcream').pack(padx=30,pady=30)
                     restart()
                     quantity_product2=quantity_product2-1
                     if quantity_product2<10:
@@ -404,7 +404,7 @@ def Process():
                         remain_product3.config(text=str(quantity_product3)+' can')
                 else:
                     du=int(money)-price3
-                    Label(notice,text='Successful! Refund: '+str(du)+'Đ', font=('Arial',50),fg='#FF6103',bg='mintcream').pack(padx=30,pady=30)
+                    Label(notice,text='Successful!\n Refund: '+str(du)+'Đ', font=('Arial',50),fg='#FF6103',bg='mintcream').pack(padx=30,pady=30)
                     restart()
                     quantity_product3=quantity_product3-1
                     if quantity_product3<10:
@@ -429,7 +429,7 @@ def Process():
                         remain_product4.config(text=str(quantity_product4)+' can')
                 else:
                     du=int(money)-price4
-                    Label(notice,text='Successful! Refund: '+str(du)+'Đ', font=('Arial',50),fg='#FF6103',bg='mintcream').pack(padx=30,pady=30)
+                    Label(notice,text='Successful!\n Refund: '+str(du)+'Đ', font=('Arial',50),fg='#FF6103',bg='mintcream').pack(padx=30,pady=30)
                     restart()
                     quantity_product4=quantity_product4-1
                     if quantity_product4<10:
@@ -454,7 +454,7 @@ def Process():
                         remain_product5.config(text=str(quantity_product5)+' pack')
                 else:
                     du=int(money)-price5
-                    Label(notice,text='Successful! Refund: '+str(du)+'Đ', font=('Arial',50),fg='#FF6103',bg='mintcream').pack(padx=30,pady=30)
+                    Label(notice,text='Successful!\n Refund: '+str(du)+'Đ', font=('Arial',50),fg='#FF6103',bg='mintcream').pack(padx=30,pady=30)
                     restart()
                     quantity_product5=quantity_product5-1
                     if quantity_product5<10:
@@ -479,7 +479,7 @@ def Process():
                         remain_product6.config(text=str(quantity_product6)+' pack')
                 else:
                     du=int(money)-price6
-                    Label(notice,text='Successful! Refund: '+str(du)+'Đ', font=('Arial',50),fg='#FF6103',bg='mintcream').pack(padx=30,pady=30)
+                    Label(notice,text='Successful!\n Refund: '+str(du)+'Đ', font=('Arial',50),fg='#FF6103',bg='mintcream').pack(padx=30,pady=30)
                     restart()
                     quantity_product6=quantity_product6-1
                     if quantity_product6<10:
@@ -504,7 +504,7 @@ def Process():
                         remain_product7.config(text=str(quantity_product7)+' pack')
                 else:
                     du=int(money)-price7
-                    Label(notice,text='Successful! Refund: '+str(du)+'Đ', font=('Arial',50),fg='#FF6103',bg='mintcream').pack(padx=30,pady=30)
+                    Label(notice,text='Successful!\n Refund: '+str(du)+'Đ', font=('Arial',50),fg='#FF6103',bg='mintcream').pack(padx=30,pady=30)
                     restart()
                     quantity_product7=quantity_product7-1
                     if quantity_product7<10:
@@ -529,7 +529,7 @@ def Process():
                         remain_product8.config(text=str(quantity_product8)+' pack')
                 else:
                     du=int(money)-price8
-                    Label(notice,text='Successful! Refund: '+str(du)+'Đ', font=('Arial',50),fg='#FF6103',bg='mintcream').pack(padx=30,pady=30)
+                    Label(notice,text='Successful!\n Refund: '+str(du)+'Đ', font=('Arial',50),fg='#FF6103',bg='mintcream').pack(padx=30,pady=30)
                     restart()
                     quantity_product8=quantity_product8-1
                     if quantity_product8<10:
